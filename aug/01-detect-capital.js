@@ -10,3 +10,4 @@ var detectCapitalUse = function(word) {
     }
     return false;
 };
+
