@@ -10,7 +10,6 @@ var getRow = function(rowIndex) {
             res = arr;
             return;
         }
-        const toBeAdded = (arr.length-2)+1;
         let startPointer = 0;
         let endPointer = 1;    
         let newArr = [];
