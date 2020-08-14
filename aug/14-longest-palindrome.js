@@ -20,12 +20,9 @@ var longestPalindrome = function(s) {
             if (obj[key] % 2 === 0) {
                 total += obj[key];
             } else {
-                total += obj[key] - 1; 
-                if (!singleFound) {
-                    total++;
-                    singleFound = true;
-                } 
-            } 
+                total += obj[key]-1;
+                obj[key] = 1;
+            }
         }
         if (singleFound === false && obj[key] === 1) {
             singleFound = true;
