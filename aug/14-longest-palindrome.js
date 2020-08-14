@@ -8,21 +8,11 @@ var longestPalindrome = function(s) {
     let total = 0;
     let singleFound = false;
     for (let char of s) {
-        if (obj.hasOwnProperty(char)) {
-            obj[char]++;
-        } else {
-            obj[char] = 1;
-        }
+        obj.hasOwnProperty(char) ? obj[char]++ : obj[char] = 1;
     }
-    console.log(obj);
     for (let key in obj) {
         if (obj[key] > 1) { 
-            if (obj[key] % 2 === 0) {
-                total += obj[key];
-            } else {
-                total += obj[key]-1;
-                obj[key] = 1;
-            }
+            total += obj[key] - (obj[key] % 2 === 0 ? 0 : (-1, obj[key] = 1));
         }
         if (singleFound === false && obj[key] === 1) {
             singleFound = true;
